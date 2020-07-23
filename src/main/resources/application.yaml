@@ -1,0 +1,13 @@
+server:
+  port: 5000
+
+
+sqs:
+  super_heroes:
+    name: heroes-queue
+
+
+
+dynamoDB:
+  endpoint:
+    heroes: http://localhost:8000/
