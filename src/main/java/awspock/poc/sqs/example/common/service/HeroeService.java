@@ -7,6 +7,8 @@ import awspock.poc.sqs.example.dynamoDB.repository.HeroeDAO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class HeroeService {
@@ -21,9 +23,11 @@ public class HeroeService {
         return heroeDAO.get(key);
     }
 
-//    public List<Heroe> getAllFromName(String heroeName){
-//        return heroeDAO.getAll(heroeName);
-//    }
+    public List<Heroe> getAllFromName(String heroeName){
+        return heroeDAO.getAllFromName(heroeName);
+    }
+
+    public List<Heroe> getAllFromIsALive(Boolean isAlive){ return heroeDAO.getAllFromIsAlive(isAlive); }
 
     public void updateHeroe(HeroeDTO heroeDTO) {
         heroeDAO.updateName(heroeDTO);

@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/heroes")
@@ -31,9 +33,14 @@ public class HeroeController {
         return ResponseEntity.ok(heroeService.getHeroe(id));
     }
 
-//    @GetMapping("/{name}/all")
-//    public ResponseEntity<List<Heroe>> getAllHeroesFromName(@PathVariable("name") String heroeName) {
-//        return ResponseEntity.ok(heroeService.getAllFromName(heroeName));
-//    }
+    @GetMapping("/{name}/name")
+    public ResponseEntity<List<Heroe>> getAllHeroesFromName(@PathVariable("name") String heroeName) {
+        return ResponseEntity.ok(heroeService.getAllFromName(heroeName));
+    }
+
+    @GetMapping("/{isAlive}/isAlive")
+    public ResponseEntity<List<Heroe>> getAllHeroesFromIsAlive(@PathVariable("isAlive") Boolean isAlive) {
+        return ResponseEntity.ok(heroeService.getAllFromIsALive(isAlive));
+    }
 
 }

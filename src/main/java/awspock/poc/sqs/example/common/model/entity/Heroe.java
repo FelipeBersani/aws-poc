@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 @DynamoDBTable(tableName = "Heroe")
-public class Heroe {
+public class Heroe{
 
     public static final String HEROE_NAME = "name-index";
 
