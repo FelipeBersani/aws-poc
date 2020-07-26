@@ -1,6 +1,6 @@
-package awspock.awspock.sqs.example.consumer.listener;
+package awspock.poc.sqs.example.consumer.listener;
 
-import awspock.awspock.sqs.example.consumer.service.HeroeService;
+import awspock.poc.sqs.example.consumer.processor.HeroeProcessor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class EventListener {
 
-    private final HeroeService heroeService;
+    private final HeroeProcessor heroeProcessor;
 
     @JmsListener(destination = "${sqs.super_heroes.name}", concurrency = "1")
-    private void process(String request){
-        heroeService.processHeroe(request);
+    private void process(String request) {
+        heroeProcessor.processHeroe(request);
     }
 
 }

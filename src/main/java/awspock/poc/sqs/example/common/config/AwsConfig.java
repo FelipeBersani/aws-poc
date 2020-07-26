@@ -1,4 +1,4 @@
-package awspock.awspock.sqs.example.consumer.config;
+package awspock.poc.sqs.example.common.config;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.regions.Regions;
@@ -10,7 +10,6 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
 import lombok.RequiredArgsConstructor;
-import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRepositories;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 //@EnableRetry
 @RequiredArgsConstructor
 //@EnableDynamoDBRepositories
-//        (basePackages = "awspock.awspock.sqs.example.consumer.repository")
+//        (basePackages = "awspock.awspock.sqs.example.dynamoDB.repository")
 public class AwsConfig {
 
     @Bean

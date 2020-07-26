@@ -1,4 +1,4 @@
-package awspock.awspock.sqs.example.consumer.config;
+package awspock.poc.sqs.example.common.config;
 
 import com.amazon.sqs.javamessaging.ProviderConfiguration;
 import com.amazon.sqs.javamessaging.SQSConnectionFactory;
