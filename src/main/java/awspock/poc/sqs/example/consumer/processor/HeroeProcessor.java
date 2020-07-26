@@ -24,7 +24,7 @@ public class HeroeProcessor {
         HeroeDTO heroeDTO = null;
         try {
             heroeDTO = objectMapper.readValue(heroeRequest, HeroeDTO.class);
-            System.out.println(heroeDTO.getName() + " has " + heroeDTO.getPower() + " of power and alive is " + !heroeDTO.getIsAlive());
+            log.info(heroeDTO.getName() + " has " + heroeDTO.getPower() + " of power and alive is " + !heroeDTO.getIsAlive());
             Thread.sleep(1500);
 
             heroeDAO.create(HeroeMapper.of(heroeDTO));
