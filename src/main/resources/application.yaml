@@ -1,12 +1,13 @@
 server:
   port: 5000
 
-
 sqs:
   super_heroes:
     name: heroes-queue
-
-
+    concurrency: 2
+  dynamo:
+    queueUrl: heroes-persistence
+    concurrency: 25
 
 dynamoDB:
   endpoint:

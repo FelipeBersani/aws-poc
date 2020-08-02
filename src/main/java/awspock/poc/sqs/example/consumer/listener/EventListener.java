@@ -11,7 +11,7 @@ public class EventListener {
 
     private final HeroeProcessor heroeProcessor;
 
-    @JmsListener(destination = "${sqs.super_heroes.name}", concurrency = "1")
+    @JmsListener(destination = "${sqs.super_heroes.name}", concurrency = "${sqs.super_heroes.concurrency}")
     private void process(String request) {
         heroeProcessor.processHeroe(request);
     }
